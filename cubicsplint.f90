@@ -2,8 +2,11 @@
 
 
 SUBROUTINE spline(x,y,n,yp1,ypn,y2)
-  INTEGER n,NMAX
-  REAL yp1,ypn,x(n),y(n),y2(n)
+  implicit none
+  INTEGER, intent(in) :: n
+  REAL, intent(in) :: yp1,ypn,x(n),y(n)
+  real, intent(out) :: y2(n)
+  integer :: NMAX
   PARAMETER (NMAX=500)
   ! Given arrays x(1:n) and y(1:n) containing a tabulated function, i.e., yi = f(xi), with
   ! x1 < x2 < ... < xN , and given values yp1 and ypn for the first derivative of the interpolating
@@ -47,8 +50,10 @@ END SUBROUTINE spline
 
 
 SUBROUTINE splint(xa,ya,y2a,n,x,y)
-  INTEGER n
-  REAL x,y,xa(n),y2a(n),ya(n)
+  implicit none
+  INTEGER, intent(in) :: n
+  REAL, intent(in) :: x,xa(n),y2a(n),ya(n)
+  real, intent(out) :: y
   !  Given the arrays xa(1:n) and ya(1:n) of length n, which tabulate a function (with the
   !  s in order), and given the array y2a(1:n), which is the output from spline above,
   !  and given a value of x, this routine returns a cubic-spline interpolated value y.
