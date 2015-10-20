@@ -1,20 +1,147 @@
 import json
 
 
-size = 2000
+size = 20
 
 MAM3 = \
 {'name': 'Modal aerosol model 3 (MAM3)', 'size': size,
  'children': [
     {'name': 'accum', 'size': size,
      'children': [
-    {'name': 'number mixing', 'size': size,
+        {'name': 'number mixing', 'size': size,
+         'children': [
+            {'name': 'interstitial', 'size': size},
+            {'name': 'cloud-bourne', 'size': size}
+            ]
+         },
+        {'name': 'mass mixing', 'size': size,
+         'children': [
+            {'name': 'dust', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+                ]
+             },
+            {'name': 'seasalt', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+                ]
+             },
+            {'name': 'sulfate', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+                ]
+             }
+            ]
+         }
+        ]
+     },
+    {'name': 'aitken', 'size': size,
      'children': [
-    ]},
-    {'name': 'mass mixing'}]},
-    {'name': 'aitken', 'size': size},
-    {'name': 'coarse', 'size': size}
-    ]}
+        {'name': 'number mixing', 'size': size,
+         'children': [
+            {'name': 'interstitial', 'size': size},
+            {'name': 'cloud-bourne', 'size': size}
+            ]
+         },
+        {'name': 'mass mixing', 'size': size,
+         'children': [
+            {'name': 'sulfate', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+                ]
+             },
+            {'name': 's-organic', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+                ]
+             },
+            {'name': 'seasalt', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+                ]
+             }
+            ]
+         }
+        ]
+     },
+    {'name': 'coarse', 'size': size,
+     'children': [
+        {'name': 'number mixing', 'size': size,
+         'children': [
+            {'name': 'interstitial', 'size': size},
+            {'name': 'cloud-bourne', 'size': size}
+            ]
+         },
+        {'name': 'mass mixing', 'size': size,
+         'children': [
+            {'name': 'sulfate', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+                ]
+             },
+            {'name': 'p-organic', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+                ]
+             },
+            {'name': 's-organic', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+                ]
+             },
+            {'name': 'black-c', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+                ]
+             },
+            {'name': 'dust', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+                ]
+             },
+            {'name': 'seasalt', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+                ]
+             }
+            ]
+         }
+        ]
+     },
+    {'name': 'MODE TYPE', 'size': size,
+     'children': [
+        {'name': 'number mixing', 'size': size,
+         'children': [
+            {'name': 'interstitial', 'size': size},
+            {'name': 'cloud-bourne', 'size': size}
+            ]
+         },
+        {'name': 'mass mxing', 'size': size,
+         'children': [
+            {'name': 'SPECIES', 'size': size,
+             'children': [
+                {'name': 'interstitial', 'size': size},
+                {'name': 'cloud-bourne', 'size': size}
+            ]
+             }
+            ]
+         }
+        ]
+     }
+    ]
+ }
 
 
 def saveas_file(name = 'noname.json'):
