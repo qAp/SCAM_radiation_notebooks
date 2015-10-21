@@ -6,7 +6,7 @@ size = 20
 MAM3 = \
 {'name': 'Modal aerosol model 3 (MAM3)', 'size': size,
  'children': [
-    {'name': 'accum', 'size': size,
+    {'name': 'coarse', 'size': size,
      'children': [
         {'name': 'number mixing', 'size': size,
          'children': [
@@ -70,7 +70,7 @@ MAM3 = \
          }
         ]
      },
-    {'name': 'coarse', 'size': size,
+    {'name': 'accum', 'size': size,
      'children': [
         {'name': 'number mixing', 'size': size,
          'children': [
