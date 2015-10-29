@@ -4,8 +4,8 @@
 SUBROUTINE spline(x,y,n,yp1,ypn,y2)
   implicit none
   INTEGER, intent(in) :: n
-  REAL, intent(in) :: yp1,ypn,x(n),y(n)
-  real, intent(out) :: y2(n)
+  REAL (KIND = 8), intent(in) :: yp1,ypn,x(n),y(n)
+  real (kind = 8), intent(out) :: y2(n)
   integer :: NMAX
   PARAMETER (NMAX=500)
   ! Given arrays x(1:n) and y(1:n) containing a tabulated function, i.e., yi = f(xi), with
@@ -17,7 +17,7 @@ SUBROUTINE spline(x,y,n,yp1,ypn,y2)
   ! that boundary.
   ! Parameter: NMAX is the largest anticipated value of n.
   INTEGER i,k
-  REAL p,qn,sig,un,u(NMAX)
+  REAL (KIND = 8) :: p,qn,sig,un,u(NMAX)
   if (yp1.gt..99e30) then  ! The lower boundary condition is set either to be 
      y2(1) = 0.            ! "natural"
      u(1) = 0.
@@ -52,13 +52,13 @@ END SUBROUTINE spline
 SUBROUTINE splint(xa,ya,y2a,n,x,y)
   implicit none
   INTEGER, intent(in) :: n
-  REAL, intent(in) :: x,xa(n),y2a(n),ya(n)
-  real, intent(out) :: y
+  REAL (KIND = 8), intent(in) :: x,xa(n),y2a(n),ya(n)
+  real (kind = 8), intent(out) :: y
   !  Given the arrays xa(1:n) and ya(1:n) of length n, which tabulate a function (with the
   !  s in order), and given the array y2a(1:n), which is the output from spline above,
   !  and given a value of x, this routine returns a cubic-spline interpolated value y.
   INTEGER k,khi,klo
-  REAL a,b,h
+  REAL (KIND = 8) :: a,b,h
   klo=1                    !   We will find the right place in the table by means of bisection.
   khi=n                    !   This is optimal if sequential calls to this routine are at random
 1 if (khi-klo.gt.1) then   !   values of x. If sequential calls are in order, and closely
