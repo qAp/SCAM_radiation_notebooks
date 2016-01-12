@@ -111,6 +111,15 @@ def page_aerosol():
     '''
     template_affix = jinja_env.get_template('template_affix.html')
 
+
+    page_title = 'Aerosol'
+
+    page_info = '''
+    In the tables below, each set of data is given a data reference.  References in the same 
+    table are concurrent, with the first one being responsible for sending feedback to CAM during
+    runtime.
+    '''
+
     name_section_1 = 'Shortwave effects'
     html_aerosol_sw = html_aerosol_sw_effects()
 
@@ -118,6 +127,8 @@ def page_aerosol():
     html_aerosol_lw = html_aerosol_lw_effects()
     
     html_aerosol = template_affix.render(website_name = 'SCAM radiation notebooks',
+                                         page_title=page_title,
+                                         page_info=page_info,
                                          content_1=html_aerosol_sw,
                                          name_section_1=name_section_1,
                                          content_2=html_aerosol_lw,
