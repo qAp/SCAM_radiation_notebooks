@@ -1,0 +1,25 @@
+
+
+<table class="table table-bordered table-condensed">
+
+  <thead>
+    <tr>
+      <th>Data reference</th>
+      <th>Model name</th>
+      <th>Aerosol in SW</th>
+      <th>Aerosol in LW</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {% for row in rows %}
+    <tr>
+      <td>{{row.reference}}</td>
+      <td>{{row.model_name}}</td>
+      <td>{{row.aerosol_in_sw}}</td>
+      <td>{{row.aerosol_in_lw}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+
+</table>
