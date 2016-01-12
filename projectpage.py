@@ -70,6 +70,41 @@ def html_aerosol_sw_effects():
     return html_aerosol_sw
 
 
+def html_aerosol_lw_effects():
+    '''
+    Returns HTML of Bootstrap panels summarising runs related
+    to the effect of including aerosol in longwave radiation models.
+    '''
+    template_panel = jinja_env.get_template('panel_body_footer.html')
+
+    # panel: concurrent RTMs
+    d_concurrent = metadata_aerosol.lw_concurrent()
+    d_concurrent = tablerows_hrefs_2_panel(tables=[d_concurrent['rtms']],
+                                               hrefs=d_concurrent['hrefs'])
+
+    # panel: CLIRADs
+    d_clirad_aeryes = metadata_aerosol.lw_clirad_aeryes()
+    d_clirad_aerno = metadata_aerosol.lw_clirad_aerno()
+    d_clirad = tablerows_hrefs_2_panel(tables=[d_clirad_aeryes['rtms'], \
+                                               d_clirad_aerno['rtms']],
+                                       hrefs=d_clirad_aeryes['hrefs'])
+
+    # panel: RRTMGs
+    d_rrtmg_aeryes = metadata_aerosol.lw_rrtmg_aeryes()
+    d_rrtmg_aerno = metadata_aerosol.lw_rrtmg_aerno()
+    d_rrtmg = tablerows_hrefs_2_panel(tables=[d_rrtmg_aeryes['rtms'], \
+                                              d_rrtmg_aerno['rtms']],
+                                      hrefs=d_rrtmg_aeryes['hrefs'])
+
+    # render the HTML for each panel
+    panels = [d_concurrent, d_clirad, d_rrtmg]
+    html_panels = (template_panel.render(panel=panel) for panel in panels)
+
+    html_aerosol_lw = '\n'.join(html_panels)
+    
+    return html_aerosol_lw
+
+
 def page_aerosol():
     '''
     Generates string for aerosol.html
@@ -78,9 +113,14 @@ def page_aerosol():
 
     name_section_1 = 'Shortwave effects'
     html_aerosol_sw = html_aerosol_sw_effects()
+
+    name_section_2 = 'Longwave effects'
+    html_aerosol_lw = html_aerosol_lw_effects()
     
     html_aerosol = template_affix.render(content_1=html_aerosol_sw,
-                                         name_section_1=name_section_1)
+                                         name_section_1=name_section_1,
+                                         content_2=html_aerosol_lw,
+                                         name_section_2=name_section_2)
     
     with open('aerosol.html', mode = 'w', encoding = 'utf-8') as file:
         file.write(html_aerosol)

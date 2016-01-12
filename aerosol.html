@@ -25,7 +25,7 @@
      top: 50px;
   }
   #section1 {padding-top:50px;color: #fff; background-color: #1E88E5;}
-  #section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
+  #section2 {padding-top:50px;color: #fff; background-color: #673ab7;}
   #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
   #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
   #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
@@ -54,7 +54,7 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><a href="#section1">Shortwave effects</a></li>
-          <li><a href="#section2">Section 2</a></li>
+          <li><a href="#section2">Longwave effects</a></li>
           <li><a href="#section3">Section 3</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -263,9 +263,196 @@
 
 </div>
 <div id="section2" class="container-fluid">
-  <h1>Section 2</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <h1>Longwave effects</h1>
+  
+
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    
+
+<table class="table table-bordered table-condensed" style="color:#000;">
+
+  <thead>
+    <tr>
+      <th>Data reference</th>
+      <th>Model name</th>
+      <th>Aerosol in SW</th>
+      <th>Aerosol in LW</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>RTM</td>
+      <td>RRTMG</td>
+      <td>no</td>
+      <td>yes</td>
+    </tr>
+  
+    <tr>
+      <td>RTM1</td>
+      <td>RRTMG</td>
+      <td>no</td>
+      <td>no</td>
+    </tr>
+  
+    <tr>
+      <td>RTM2</td>
+      <td>CLIRAD</td>
+      <td>no</td>
+      <td>yes</td>
+    </tr>
+  
+    <tr>
+      <td>RTM3</td>
+      <td>CLIRAD</td>
+      <td>no</td>
+      <td>no</td>
+    </tr>
+  
+  </tbody>
+
+</table>
+  </div>
+  <div class="panel-footer">
+    
+<button type="button" class="btn btn-link">
+  <a href="http://nbviewer.ipython.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95_LW_RRTMGaer_RRTMG_SW_RRTMG_RRTMG.ipynb">RTM - RTM1</a>
+</button> 
+<button type="button" class="btn btn-link">
+  <a href="http://nbviewer.ipython.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95_-_LW_RRTMGaer_SW_RRTMG_-_LW_CLIRADaer_CLIRAD_SW_CLIRAD_CLIRAD.ipynb">RTM2 - RTM3</a>
+</button>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    
+
+<table class="table table-bordered table-condensed" style="color:#000;">
+
+  <thead>
+    <tr>
+      <th>Data reference</th>
+      <th>Model name</th>
+      <th>Aerosol in SW</th>
+      <th>Aerosol in LW</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>RTMyes</td>
+      <td>CLIRAD</td>
+      <td>no</td>
+      <td>yes</td>
+    </tr>
+  
+  </tbody>
+
+</table> 
+
+<table class="table table-bordered table-condensed" style="color:#000;">
+
+  <thead>
+    <tr>
+      <th>Data reference</th>
+      <th>Model name</th>
+      <th>Aerosol in SW</th>
+      <th>Aerosol in LW</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>RTMno</td>
+      <td>CLIRAD</td>
+      <td>no</td>
+      <td>no</td>
+    </tr>
+  
+  </tbody>
+
+</table>
+  </div>
+  <div class="panel-footer">
+    
+<button type="button" class="btn btn-link">
+  <a href="http://nbviewer.ipython.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95_LW_CLIRAD_SW_CLIRAD_vs_LW_CLIRADaer_SW_CLIRAD.ipynb">RTMyes - RTMno</a>
+</button>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    
+
+<table class="table table-bordered table-condensed" style="color:#000;">
+
+  <thead>
+    <tr>
+      <th>Data reference</th>
+      <th>Model name</th>
+      <th>Aerosol in SW</th>
+      <th>Aerosol in LW</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>RTMyes</td>
+      <td>RRTMG</td>
+      <td>no</td>
+      <td>yes</td>
+    </tr>
+  
+  </tbody>
+
+</table> 
+
+<table class="table table-bordered table-condensed" style="color:#000;">
+
+  <thead>
+    <tr>
+      <th>Data reference</th>
+      <th>Model name</th>
+      <th>Aerosol in SW</th>
+      <th>Aerosol in LW</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>RTMno</td>
+      <td>RRTMG</td>
+      <td>no</td>
+      <td>no</td>
+    </tr>
+  
+  </tbody>
+
+</table>
+  </div>
+  <div class="panel-footer">
+    
+<button type="button" class="btn btn-link">
+  <a href="http://nbviewer.ipython.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95_LW_RRTMG_SW_RRTMG_vs_LW_RRTMGaer_SW_RRTMG.ipynb">RTMyes - RTMno</a>
+</button>
+  </div>
+</div>
 </div>
 <div id="section3" class="container-fluid">
   <h1>Section 3</h1>
