@@ -76,9 +76,11 @@ def page_aerosol():
     '''
     template_affix = jinja_env.get_template('template_affix.html')
 
+    name_section_1 = 'Shortwave effects'
     html_aerosol_sw = html_aerosol_sw_effects()
     
-    html_aerosol = template_affix.render(content_1 = html_aerosol_sw)
+    html_aerosol = template_affix.render(content_1=html_aerosol_sw,
+                                         name_section_1=name_section_1)
     
     with open('aerosol.html', mode = 'w', encoding = 'utf-8') as file:
         file.write(html_aerosol)
