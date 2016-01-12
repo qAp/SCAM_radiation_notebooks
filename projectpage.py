@@ -64,8 +64,10 @@ def html_aerosol_sw_effects():
     # render the HTML for each panel
     panels = [d_concurrent, d_clirad, d_rrtmg]
     html_panels = (template_panel.render(panel=panel) for panel in panels)
+
+    html_aerosol_sw = '\n'.join(html_panels)
     
-    return html_panels
+    return html_aerosol_sw
 
 
 def page_aerosol():
@@ -73,8 +75,10 @@ def page_aerosol():
     Generates string for aerosol.html
     '''
     template_affix = jinja_env.get_template('template_affix.html')
+
+    html_aerosol_sw = html_aerosol_sw_effects()
     
-    html_aerosol = template_affix.render()
+    html_aerosol = template_affix.render(content_1 = html_aerosol_sw)
     
     with open('aerosol.html', mode = 'w', encoding = 'utf-8') as file:
         file.write(html_aerosol)
