@@ -117,7 +117,8 @@ def page_aerosol():
     name_section_2 = 'Longwave effects'
     html_aerosol_lw = html_aerosol_lw_effects()
     
-    html_aerosol = template_affix.render(content_1=html_aerosol_sw,
+    html_aerosol = template_affix.render(website_name = 'SCAM radiation notebooks',
+                                         content_1=html_aerosol_sw,
                                          name_section_1=name_section_1,
                                          content_2=html_aerosol_lw,
                                          name_section_2=name_section_2)
