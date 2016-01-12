@@ -72,10 +72,9 @@ def page_aerosol():
     '''
     Generates string for aerosol.html
     '''
-    template_aerosol = jinja_env.get_template('aerosol.html')
+    template_affix = jinja_env.get_template('template_affix.html')
     
-    html_panels = html_aerosol_sw_effects()
-    html_aerosol = template_aerosol.render(panels = html_panels)
+    html_aerosol = template_affix.render()
     
     with open('aerosol.html', mode = 'w', encoding = 'utf-8') as file:
         file.write(html_aerosol)
