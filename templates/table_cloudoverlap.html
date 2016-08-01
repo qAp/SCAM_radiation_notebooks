@@ -1,0 +1,25 @@
+
+
+<table class="table table-bordered table-condensed" style="color:#000;">
+
+  <thead>
+    <tr>
+      <th>Data reference</th>
+      <th>Model name</th>
+      <th>SW overlap scheme</th>
+      <th>LW overlap scheme</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {% for row in rows %}
+    <tr>
+      <td>{{row.reference}}</td>
+      <td>{{row.model_name}}</td>
+      <td>{{row.sw_overlap_scheme}}</td>
+      <td>{{row.lw_overlap_scheme}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+
+</table>

@@ -4,7 +4,7 @@ import os
 import jinja2
 
 import metadata_aerosol
-
+import cloudoverlap
 
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
@@ -137,6 +137,24 @@ def page_aerosol():
     with open('aerosol.html', mode = 'w', encoding = 'utf-8') as file:
         file.write(html_aerosol)
 
+
+
+
+def writeHTMLfile_cloudoverlap():
+    tmpl_affix = jinja_env.get_template('template_affix.html')
+    tmpl_panel = jinja_env.get_template('panel_body_footer.html')
+    tmpl_table = jinja_env.get_template('table_cloudoverlap.html')
+    tmpl_link = jinja_env.get_template('button_href.html')
+    html = cloudoverlap.getHTML_affix(tmpl_affix=tmpl_affix,
+                                      tmpl_panel=tmpl_panel,
+                                      tmpl_table=tmpl_table,
+                                      tmpl_link=tmpl_link)
+    
+#    html = 'cloud overlapping results'
+
+    with open('cloud_overlap.html', mode='w', encoding='utf-8') as f:
+        f.write(html)
+
         
 
 def keeps():
@@ -152,5 +170,7 @@ def keeps():
 
 if __name__ == '__main__':
     page_index()
+    writeHTMLfile_cloudoverlap()
     page_aerosol()
+
 

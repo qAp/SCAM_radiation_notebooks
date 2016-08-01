@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Aerosol</title>
+  <title>Cloud Overlapping</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -34,12 +34,8 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <div class="container-fluid" style="background-color:#F44336;color:#fff;height:200px;">
-  <h1>Aerosol</h1>
-  <p>
-    In the tables below, each set of data is given a data reference.  References in the same 
-    table are concurrent, with the first one being responsible for sending feedback to CAM during
-    runtime.
-    </p>
+  <h1>Cloud Overlapping</h1>
+  <p>The maximum-random cloud overlapping scheme used in CLIRAD is incoperated into RRTMG and the result is compared with the McICA scheme.  Each table represents a single execution of RRTMG executable.  Entries in the same table are concurrent runs of RRTMG which share the same input from CAM.  The first entry in the table is the one that sends radiation feedback to CAM at each model time-step.</p>
 </div>
 
 <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
@@ -50,14 +46,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index.html">SCAM radiation notebooks</a>
+      <a class="navbar-brand" href="index.html">SCAM Radiation Results</a>
     </div>
     <div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li><a href="#section1">Shortwave effects</a></li>
-          <li><a href="#section2">Longwave effects</a></li>
-          <li><a href="#section3"></a></li>
+          <li><a href="#section1">ARM95</a></li>
+          <li><a href="#section2">MPACE</a></li>
+          <li><a href="#section3">TWPICE</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="#section41">Section 4-1</a></li>
@@ -71,7 +67,7 @@
 </nav>    
 
 <div id="section1" class="container-fluid">
-  <h1>Shortwave effects</h1>
+  <h1>ARM95</h1>
 
   
 
@@ -87,8 +83,8 @@
     <tr>
       <th>Data reference</th>
       <th>Model name</th>
-      <th>Aerosol in SW</th>
-      <th>Aerosol in LW</th>
+      <th>SW overlap scheme</th>
+      <th>LW overlap scheme</th>
     </tr>
   </thead>
 
@@ -97,29 +93,15 @@
     <tr>
       <td>RTM</td>
       <td>RRTMG</td>
-      <td>yes</td>
-      <td>no</td>
+      <td>McICA</td>
+      <td>McICA</td>
     </tr>
   
     <tr>
       <td>RTM1</td>
       <td>RRTMG</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-  
-    <tr>
-      <td>RTM2</td>
-      <td>CLIRAD</td>
-      <td>yes</td>
-      <td>no</td>
-    </tr>
-  
-    <tr>
-      <td>RTM3</td>
-      <td>CLIRAD</td>
-      <td>no</td>
-      <td>no</td>
+      <td>MaxRand</td>
+      <td>MaxRand</td>
     </tr>
   
   </tbody>
@@ -129,9 +111,7 @@
   <div class="panel-footer">
     
 
-  <a href="http://nbviewer.ipython.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95/study__aerosol/arm95_LW_RRTMG_RRTMG_SW_RRTMGaer_RRTMG.ipynb">RTM - RTM1</a> 
-
-  <a href="/SCAM_radiation_notebooks/blob/master/arm95/study__aerosol/arm95_-_LW_RRTMG_SW_RRTMGaer_-_LW_CLIRAD_CLIRAD_SW_CLIRADaer_CLIRAD.ipynb">RTM2 - RTM3</a>
+  <a href="http://nbviewer.jupyter.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95/study__cloud_overlapping/arm95_rrtmgMcICA_vs_rrtmgMaxRand.ipynb">RTM1 - RTM</a>
   </div>
 </div>
 
@@ -148,23 +128,24 @@
     <tr>
       <th>Data reference</th>
       <th>Model name</th>
-      <th>Aerosol in SW</th>
-      <th>Aerosol in LW</th>
+      <th>SW overlap scheme</th>
+      <th>LW overlap scheme</th>
     </tr>
   </thead>
 
   <tbody>
   
     <tr>
-      <td>RTMyes</td>
-      <td>CLIRAD</td>
-      <td>yes</td>
-      <td>no</td>
+      <td>RTM_MCICA</td>
+      <td>RRTMG</td>
+      <td>McICA</td>
+      <td>McICA</td>
     </tr>
   
   </tbody>
 
-</table> 
+</table>
+
 
 <table class="table table-bordered table-condensed" style="color:#000;">
 
@@ -172,18 +153,18 @@
     <tr>
       <th>Data reference</th>
       <th>Model name</th>
-      <th>Aerosol in SW</th>
-      <th>Aerosol in LW</th>
+      <th>SW overlap scheme</th>
+      <th>LW overlap scheme</th>
     </tr>
   </thead>
 
   <tbody>
   
     <tr>
-      <td>RTMno</td>
-      <td>CLIRAD</td>
-      <td>no</td>
-      <td>no</td>
+      <td>RTM_MaxRand</td>
+      <td>RRTMG</td>
+      <td>MaxRand</td>
+      <td>MaxRand</td>
     </tr>
   
   </tbody>
@@ -193,75 +174,13 @@
   <div class="panel-footer">
     
 
-  <a href="http://nbviewer.ipython.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95/study__aerosol/arm95_LW_CLIRAD_SW_CLIRAD_vs_LW_CLIRAD_SW_CLIRADaer.ipynb">RTMyes - RTMno</a>
-  </div>
-</div>
-
-
-
-
-<div class="panel panel-default">
-  <div class="panel-body">
-    
-
-<table class="table table-bordered table-condensed" style="color:#000;">
-
-  <thead>
-    <tr>
-      <th>Data reference</th>
-      <th>Model name</th>
-      <th>Aerosol in SW</th>
-      <th>Aerosol in LW</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  
-    <tr>
-      <td>RTMyes</td>
-      <td>RRTMG</td>
-      <td>yes</td>
-      <td>no</td>
-    </tr>
-  
-  </tbody>
-
-</table> 
-
-<table class="table table-bordered table-condensed" style="color:#000;">
-
-  <thead>
-    <tr>
-      <th>Data reference</th>
-      <th>Model name</th>
-      <th>Aerosol in SW</th>
-      <th>Aerosol in LW</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  
-    <tr>
-      <td>RTMno</td>
-      <td>RRTMG</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-  
-  </tbody>
-
-</table>
-  </div>
-  <div class="panel-footer">
-    
-
-  <a href="http://nbviewer.ipython.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95/study__aerosol/arm95_LW_RRTMG_SW_RRTMG_vs_LW_RRTMG_SW_RRTMGaer.ipynb">RTMyes - RTMno</a>
+  <a href="http://nbviewer.jupyter.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95/study__cloud_overlapping/arm95_LW_rrtmgMcICA_rrtmgMaxRand_SW_rrtmgMcICA_rrtmgMaxRand.ipynb">RTM_MaxRand - RTM_McICA</a>
   </div>
 </div>
 
 </div>
 <div id="section2" class="container-fluid">
-  <h1>Longwave effects</h1>
+  <h1>MPACE</h1>
   
 
 
@@ -276,8 +195,8 @@
     <tr>
       <th>Data reference</th>
       <th>Model name</th>
-      <th>Aerosol in SW</th>
-      <th>Aerosol in LW</th>
+      <th>SW overlap scheme</th>
+      <th>LW overlap scheme</th>
     </tr>
   </thead>
 
@@ -286,29 +205,15 @@
     <tr>
       <td>RTM</td>
       <td>RRTMG</td>
-      <td>no</td>
-      <td>yes</td>
+      <td>McICA</td>
+      <td>McICA</td>
     </tr>
   
     <tr>
       <td>RTM1</td>
       <td>RRTMG</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-  
-    <tr>
-      <td>RTM2</td>
-      <td>CLIRAD</td>
-      <td>no</td>
-      <td>yes</td>
-    </tr>
-  
-    <tr>
-      <td>RTM3</td>
-      <td>CLIRAD</td>
-      <td>no</td>
-      <td>no</td>
+      <td>MaxRand</td>
+      <td>MaxRand</td>
     </tr>
   
   </tbody>
@@ -318,9 +223,7 @@
   <div class="panel-footer">
     
 
-  <a href="http://nbviewer.ipython.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95/study__aerosol/arm95_LW_RRTMGaer_RRTMG_SW_RRTMG_RRTMG.ipynb">RTM - RTM1</a> 
-
-  <a href="http://nbviewer.ipython.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95/study__aerosol/arm95_-_LW_RRTMGaer_SW_RRTMG_-_LW_CLIRADaer_CLIRAD_SW_CLIRAD_CLIRAD.ipynb">RTM2 - RTM3</a>
+  <a href="http://nbviewer.jupyter.org/github/qAp/SCAM_radiation_notebooks/blob/master/mpace/study__cloud_overlapping/mpace_rrtmgMcICA_vs_rrtmgMaxRand.ipynb">RTM1 - RTM</a>
   </div>
 </div>
 
@@ -337,23 +240,24 @@
     <tr>
       <th>Data reference</th>
       <th>Model name</th>
-      <th>Aerosol in SW</th>
-      <th>Aerosol in LW</th>
+      <th>SW overlap scheme</th>
+      <th>LW overlap scheme</th>
     </tr>
   </thead>
 
   <tbody>
   
     <tr>
-      <td>RTMyes</td>
-      <td>CLIRAD</td>
-      <td>no</td>
-      <td>yes</td>
+      <td>RTM_MCICA</td>
+      <td>RRTMG</td>
+      <td>McICA</td>
+      <td>McICA</td>
     </tr>
   
   </tbody>
 
-</table> 
+</table>
+
 
 <table class="table table-bordered table-condensed" style="color:#000;">
 
@@ -361,18 +265,18 @@
     <tr>
       <th>Data reference</th>
       <th>Model name</th>
-      <th>Aerosol in SW</th>
-      <th>Aerosol in LW</th>
+      <th>SW overlap scheme</th>
+      <th>LW overlap scheme</th>
     </tr>
   </thead>
 
   <tbody>
   
     <tr>
-      <td>RTMno</td>
-      <td>CLIRAD</td>
-      <td>no</td>
-      <td>no</td>
+      <td>RTM_MaxRand</td>
+      <td>RRTMG</td>
+      <td>MaxRand</td>
+      <td>MaxRand</td>
     </tr>
   
   </tbody>
@@ -382,77 +286,122 @@
   <div class="panel-footer">
     
 
-  <a href="http://nbviewer.ipython.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95/study__aerosol/arm95_LW_CLIRAD_SW_CLIRAD_vs_LW_CLIRADaer_SW_CLIRAD.ipynb">RTMyes - RTMno</a>
-  </div>
-</div>
-
-
-
-
-<div class="panel panel-default">
-  <div class="panel-body">
-    
-
-<table class="table table-bordered table-condensed" style="color:#000;">
-
-  <thead>
-    <tr>
-      <th>Data reference</th>
-      <th>Model name</th>
-      <th>Aerosol in SW</th>
-      <th>Aerosol in LW</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  
-    <tr>
-      <td>RTMyes</td>
-      <td>RRTMG</td>
-      <td>no</td>
-      <td>yes</td>
-    </tr>
-  
-  </tbody>
-
-</table> 
-
-<table class="table table-bordered table-condensed" style="color:#000;">
-
-  <thead>
-    <tr>
-      <th>Data reference</th>
-      <th>Model name</th>
-      <th>Aerosol in SW</th>
-      <th>Aerosol in LW</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  
-    <tr>
-      <td>RTMno</td>
-      <td>RRTMG</td>
-      <td>no</td>
-      <td>no</td>
-    </tr>
-  
-  </tbody>
-
-</table>
-  </div>
-  <div class="panel-footer">
-    
-
-  <a href="http://nbviewer.ipython.org/github/qAp/SCAM_radiation_notebooks/blob/master/arm95/study__aerosol/arm95_LW_RRTMG_SW_RRTMG_vs_LW_RRTMGaer_SW_RRTMG.ipynb">RTMyes - RTMno</a>
+  <a href="http://nbviewer.jupyter.org/github/qAp/SCAM_radiation_notebooks/blob/master/mpace/study__cloud_overlapping/mpace_LW_rrtmgMcICA_rrtmgMaxRand_SW_rrtmgMcICA_rrtmgMaxRand.ipynb">RTM_MaxRand - RTM_McICA</a>
   </div>
 </div>
 </div>
 
 </div>
 <div id="section3" class="container-fluid">
-  <h1></h1>
+  <h1>TWPICE</h1>
   
+
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    
+
+<table class="table table-bordered table-condensed" style="color:#000;">
+
+  <thead>
+    <tr>
+      <th>Data reference</th>
+      <th>Model name</th>
+      <th>SW overlap scheme</th>
+      <th>LW overlap scheme</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>RTM</td>
+      <td>RRTMG</td>
+      <td>McICA</td>
+      <td>McICA</td>
+    </tr>
+  
+    <tr>
+      <td>RTM1</td>
+      <td>RRTMG</td>
+      <td>MaxRand</td>
+      <td>MaxRand</td>
+    </tr>
+  
+  </tbody>
+
+</table>
+  </div>
+  <div class="panel-footer">
+    
+
+  <a href="http://nbviewer.jupyter.org/github/qAp/SCAM_radiation_notebooks/blob/master/twpice/study__cloud_overlapping/twpice_rrtmgMcICA_vs_rrtmgMaxRand.ipynb">RTM1 - RTM</a>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    
+
+<table class="table table-bordered table-condensed" style="color:#000;">
+
+  <thead>
+    <tr>
+      <th>Data reference</th>
+      <th>Model name</th>
+      <th>SW overlap scheme</th>
+      <th>LW overlap scheme</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>RTM_MCICA</td>
+      <td>RRTMG</td>
+      <td>McICA</td>
+      <td>McICA</td>
+    </tr>
+  
+  </tbody>
+
+</table>
+
+
+<table class="table table-bordered table-condensed" style="color:#000;">
+
+  <thead>
+    <tr>
+      <th>Data reference</th>
+      <th>Model name</th>
+      <th>SW overlap scheme</th>
+      <th>LW overlap scheme</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>RTM_MaxRand</td>
+      <td>RRTMG</td>
+      <td>MaxRand</td>
+      <td>MaxRand</td>
+    </tr>
+  
+  </tbody>
+
+</table>
+  </div>
+  <div class="panel-footer">
+    
+
+  <a href="http://nbviewer.jupyter.org/github/qAp/SCAM_radiation_notebooks/blob/master/twpice/study__cloud_overlapping/twpice_LW_rrtmgMcICA_rrtmgMaxRand_SW_rrtmgMcICA_rrtmgMaxRand.ipynb">RTM_MaxRand - RTM_McICA</a>
+  </div>
+</div>
 </div>
 
 </body>
