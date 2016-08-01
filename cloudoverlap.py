@@ -60,7 +60,7 @@ def getHTML_affix(tmpl_affix=None, tmpl_panel=None,
                   tmpl_table=None, tmpl_link=None):
     page_title = 'Cloud Overlapping'
     page_info = '''The maximum-random cloud overlapping scheme used in CLIRAD is incoperated into RRTMG and the result is compared with the McICA scheme.  Each table represents a single execution of RRTMG executable.  Entries in the same table are concurrent runs of RRTMG which share the same input from CAM.  The first entry in the table is the one that sends radiation feedback to CAM at each model time-step.'''
-    website_name = 'SCAM Radiation Results'
+    website_name = 'SCAM radiation notebooks'
 
     sites = data.SITES
 
